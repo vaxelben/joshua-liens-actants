@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Network Visualization</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
         body {
             margin: 0;
@@ -17,6 +18,7 @@
         #graph {
             flex: 1;
             height: 100vh;
+            touch-action: none; /* Empêche le scroll sur mobile */
         }
 
         .tp-dfwv {
@@ -25,9 +27,22 @@
             right: 20px !important;
             z-index: 1000 !important;
         }
+
+        /* Ajustements pour mobile */
+        @media (max-width: 768px) {
+            .tp-dfwv {
+                top: 10px !important;
+                right: 10px !important;
+                transform: scale(0.8); /* Réduit légèrement la taille du panneau */
+            }
+
+            text {
+                font-size: 8px !important; /* Texte plus petit sur mobile */
+            }
+        }
     </style>
-  <script type="module" crossorigin src="/joshua-liens-actants/assets/index-DqAOzTP8.js"></script>
-  <link rel="modulepreload" crossorigin href="/joshua-liens-actants/assets/vendor-ByTJSjIS.js">
+  <script type="module" crossorigin src="/assets/index-BPN0dwmV.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/vendor-ByTJSjIS.js">
 </head>
 <body>
     <div id="graph"></div>
